@@ -1,0 +1,24 @@
+#!/usr/bin/env bash
+
+set -euo pipefail
+
+source "$DOTLY_PATH/scripts/core/_main.sh"
+
+##? Connect to MUTAZUAY vpn using openvpn
+##?
+##? Usage:
+##?    vpn_connect
+docs::parse "$@"
+
+function notify() {
+	if [ "$(command -v notify-send)" ]; then
+		notify-send "$1" "$2"
+	fi
+}
+
+# Connect to vpn
+notify $(basename "$0") 'Establishing VPN connection'
+echo "Establishing VPN connection"
+sudo openvpn --config /etc/openvpn/ejuca@mail.mutazuay.com.ovpn
+
+notify $(basename "$0") "VPN connection to MUTAZUAY established!"
