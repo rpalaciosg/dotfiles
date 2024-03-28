@@ -7,3 +7,6 @@
 
 - link:
     ~/.dotly: os/linux/.dotly
+    ~/.config/kitty/kitty.conf: os/linux/kitty/kitty.conf
+    ~/.config/kitty/theme.conf: os/linux/kitty/theme.conf
+    ~/.config/kitty/rest-kitty.conf: os/linux/kitty/rest-kitty.conf
