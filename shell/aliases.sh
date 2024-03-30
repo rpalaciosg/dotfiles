@@ -3,11 +3,11 @@ alias sudo='sudo '
 
 alias ..="cd .."
 alias ...="cd ../.."
-alias l='lsd --group-directories-first -g -t -G -S -F' #'colorls --group-directories-first --gs -t'
-alias ll='lsd --group-directories-first -g -A -t -G -S -F' #'colorls --group-directories-first --almost-all --gs -t'
-#alias ll="ls -l"
+alias ls='lsd --group-directories-first -g -t -G -S -F' #'colorls --group-directories-first --gs -t'
+alias l='lsd --group-directories-first -g -A -t -G -S -F' #'colorls --group-directories-first --gs -t'
+alias ll='lsd --group-directories-first -g -A -t -G -S -F --blocks name,size,git,permission' #'colorls --group-directories-first --almost-all --gs -t'
 alias la='lsd --group-directories-first -a -g -t -G -S -F --long' #'colorls --group-directories-first --almost-all --long --gs -t' # detailed list view
-#alias la="ls -la"
+alias lt='lsd --tree --depth 2 --blocks name,size,git,permission -gtGSF'
 alias ~="cd ~"
 alias dotfiles='cd $DOTFILES_PATH'
 

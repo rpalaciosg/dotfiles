@@ -10,3 +10,6 @@
     ~/.config/kitty/kitty.conf: os/linux/kitty/kitty.conf
     ~/.config/kitty/theme.conf: os/linux/kitty/theme.conf
     ~/.config/kitty/rest-kitty.conf: os/linux/kitty/rest-kitty.conf
+    ~/.config/lsd/config.yaml: os/linux/lsd/config.yaml
+    ~/.config/lsd/colors.yaml: os/linux/lsd/colors.yaml
+    ~/.config/lsd/colors.minimal.yaml: os/linux/lsd/colors.minimal.yaml
