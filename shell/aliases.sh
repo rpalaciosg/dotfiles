@@ -3,10 +3,10 @@ alias sudo='sudo '
 
 alias ..="cd .."
 alias ...="cd ../.."
-alias l='colorls --group-directories-first --gs -t'
-alias ll='colorls --group-directories-first --almost-all --gs -t'
+alias l='lsd --group-directories-first -g -t -G -S -F' #'colorls --group-directories-first --gs -t'
+alias ll='lsd --group-directories-first -g -A -t -G -S -F' #'colorls --group-directories-first --almost-all --gs -t'
 #alias ll="ls -l"
-alias la='colorls --group-directories-first --almost-all --long --gs -t' # detailed list view
+alias la='lsd --group-directories-first -a -g -t -G -S -F --long' #'colorls --group-directories-first --almost-all --long --gs -t' # detailed list view
 #alias la="ls -la"
 alias ~="cd ~"
 alias dotfiles='cd $DOTFILES_PATH'
@@ -50,3 +50,4 @@ alias up='dot package update_all'
 
 # customize
 alias gtp='cd /home/richard/Projects'
+alias gtl='cd /home/richard/Learning'
