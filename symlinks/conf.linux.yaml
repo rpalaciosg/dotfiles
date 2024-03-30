@@ -13,3 +13,4 @@
     ~/.config/lsd/config.yaml: os/linux/lsd/config.yaml
     ~/.config/lsd/colors.yaml: os/linux/lsd/colors.yaml
     ~/.config/lsd/colors.minimal.yaml: os/linux/lsd/colors.minimal.yaml
+    ~/.config/nvim: os/linux/nvim
