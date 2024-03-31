@@ -16,3 +16,15 @@
     ~/.config/lsd/colors.yaml: os/linux/lsd/colors.yaml
     ~/.config/lsd/colors.minimal.yaml: os/linux/lsd/colors.minimal.yaml
     ~/.config/nvim: os/linux/nvim
+    ~/.config/nvim/init.lua: os/linux/nvim/init.lua
+    ~/.config/nvim/lazy-lock.json: os/linux/nvim/lazy-lock.json
+    ~/.config/nvim/lazyvim.json: os/linux/nvim/lazyvim.json
+    ~/.config/nvim/stylua.toml: os/linux/nvim/stylua.toml
+    ~/.config/nvim/lua/config/autocmds.lua: os/linux/nvim/lua/config/autocmds.lua
+    ~/.config/nvim/lua/config/keymaps.lua: os/linux/nvim/lua/config/keymaps.lua
+    ~/.config/nvim/lua/config/lazy.lua: os/linux/nvim/lua/config/lazy.lua
+    ~/.config/nvim/lua/config/options.lua: os/linux/nvim/lua/config/options.lua
+    ~/.config/nvim/lua/plugins/example.lua: os/linux/nvim/lua/plugins/example.lua
+    ~/.config/Code/User/settings.json: editors/code/settings.json
+    ~/.config/Code/User/keybindings.json: editors/code/keybindings.json
+    ~/.config/Code/User/snippets: editors/code/snippets
