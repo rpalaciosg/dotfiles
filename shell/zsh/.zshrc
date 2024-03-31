@@ -19,12 +19,12 @@ source "$DOTFILES_PATH/shell/init.sh"
 fpath=("$DOTFILES_PATH/shell/zsh/themes" "$DOTFILES_PATH/shell/zsh/autocompletions" "$DOTLY_PATH/shell/zsh/themes" "$DOTLY_PATH/shell/zsh/completions" $fpath)
 
 autoload -Uz promptinit && promptinit
-#prompt ${DOTLY_THEME:-codely}
-prompt ${DOTLY_THEME:-spaceship}
+prompt ${DOTLY_THEME:-codely}
+#prompt ${DOTLY_THEME:-spaceship}
 
-autoload -U promptinit; promptinit
+#autoload -U promptinit; promptinit
 #prompt spaceship
-prompt ${DOTLY_THEME:-spaceship}
+#prompt ${DOTLY_THEME:-spaceship}
 
 source "$DOTLY_PATH/shell/zsh/bindings/dot.zsh"
 source "$DOTLY_PATH/shell/zsh/bindings/reverse_search.zsh"

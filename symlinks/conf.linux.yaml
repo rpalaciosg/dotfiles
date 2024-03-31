@@ -28,3 +28,4 @@
     ~/.config/Code/User/settings.json: editors/code/settings.json
     ~/.config/Code/User/keybindings.json: editors/code/keybindings.json
     ~/.config/Code/User/snippets: editors/code/snippets
+    ~/.gitconfig: git/.gitconfig
