@@ -38,3 +38,4 @@ export NVM_DIR="/home/richard/.nvm"
 export PATH=/home/richard/.local/bin:$PATH
 
 PATH=~/.console-ninja/.bin:$PATH
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
