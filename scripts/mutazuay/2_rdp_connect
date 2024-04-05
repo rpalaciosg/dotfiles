@@ -26,3 +26,4 @@ xfreerdp /multimon /floatbar /u:$USERNAME /v:10.100.45.12
 #freerdp-nightly/bin/xfreerdp \ -window-drag \ -menu-anims \ -themes \ +fonts \ /bpp:32 \ /f \ -decorations \ -compression \ /audio-mode:0 \ /mic:format:1 \ /sound:latency:50 \ /multimon \ -floatbar \ /v:$1 \ /u:$2 \ /p:$3
 
 notify $(basename "$0") "RDP connection to MUTAZUAY established!"
+echo $(basename "$0") "RDP connection to MUTAZUAY established!"
