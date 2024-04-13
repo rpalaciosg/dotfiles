@@ -3,11 +3,13 @@ alias sudo='sudo '
 
 alias ..="cd .."
 alias ...="cd ../.."
-alias ls='lsd --group-directories-first -g -t -G -S -F'                                      #'colorls --group-directories-first --gs -t'
-alias l='lsd --group-directories-first -g -A -t -G -S -F'                                    #'colorls --group-directories-first --gs -t'
-alias ll='lsd --group-directories-first -g -A -t -G -S -F --blocks name,size,git,permission' #'colorls --group-directories-first --almost-all --gs -t'
-alias la='lsd --group-directories-first -a -g -t -G -S -F --long'                            #'colorls --group-directories-first --almost-all --long --gs -t' # detailed list view
+# alias ls='lsd --group-directories-first -g -t -G -S -F' #'colorls --group-directories-first --gs -t'
+alias l='lsd --group-directories-first -g -t -G -S -F --color auto --icon auto' #'colorls --group-directories-first --gs -t'
+# alias ll='lsd --group-directories-first -g -A -t -G -S -F --blocks name,size,git,permission' #'colorls --group-directories-first --almost-all --gs -t'
+alias ll='lsd --group-directories-first -g -A -t -G -S -F' #'colorls --group-directories-first --almost-all --gs -t'
+# alias lt='lsd --tree --depth 2 -gtGSF'
 alias lt='lsd --tree --depth 2 --blocks name,size,git,permission -gtGSF'
+alias la='lsd --group-directories-first -a -g -t -G -S -F --long' #'colorls --group-directories-first --almost-all --long --gs -t' # detailed list view
 alias ~="cd ~"
 alias dotfiles='cd $DOTFILES_PATH'
 
@@ -15,10 +17,9 @@ alias dotfiles='cd $DOTFILES_PATH'
 alias cat="batcat"
 
 # Nvim or vim
+alias vi="nvim"
 alias vim="nvim"
 alias nvim="nvim"
-alias vi="nvim"
-alias lv="nvim"
 
 # Git
 alias g="git"
@@ -44,10 +45,14 @@ alias cz-friendly="commitizen init cz-conventional-changelog --save-dev --save-e
 alias k='kill -9'
 alias i.='(idea $PWD &>/dev/null &)'
 alias c.='(code $PWD &>/dev/null &)'
+alias v.='nvim .'
 alias o.='open .'
 alias up='dot package update_all'
-#alias code='/usr/share/code'
+alias dockerps="docker ps --format 'table {{.ID}}\t{{.Status}}\t{{.Names}}\t{{.Image}}'"
+alias dockerpsa="docker ps -a --format 'table {{.ID}}\t{{.Status}}\t{{.Names}}\t{{.Image}}'"
 
 # customize
-alias gtp='cd /home/richard/Projects'
-alias gtl='cd /home/richard/Learning'
+alias gtp='cd $HOME/Projects'
+alias gtl='cd $HOME/Learning'
+# alias cdc='cd $HOME/Code'
+alias zshs='source $HOME/.zshrc'
