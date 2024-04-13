@@ -5,6 +5,7 @@
   defaultBranch = main
 [core]
   excludesfile = ~/.gitignore
+	editor = nvim
 [color]
   status = auto
   branch = auto
