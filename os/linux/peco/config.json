@@ -1,0 +1,11 @@
+{
+    "Prompt": " [peco] Query →",
+    "Use256Color": true,
+     "Style": {
+        "Basic": ["on_default", "default"],
+        "SavedSelection": ["bold", "on_yellow", "white"],
+        "Selected": ["underline", "on_219", "black"],
+        "Query": ["yellow", "bold"],
+        "Matched": ["bold","220", "on_33"]
+    }
+}
