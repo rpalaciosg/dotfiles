@@ -27,7 +27,8 @@ bindkey "^k" _open_project
 # Cambiarme de rama de git
 _change_branch() {
   local branch_name=$(git branch | peco);
-  git checkout "${branch_name##*( )}";
+  # git checkout "${branch_name##*( )}";
+  git switch "${branch_name##*( )}";
 }
 
 zle -N _change_branch
