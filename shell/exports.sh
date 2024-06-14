@@ -14,6 +14,8 @@ export GEM_HOME="$HOME/.gem"
 export GOPATH="$HOME/.go"
 export VSCODEPATH="/usr/share/code"
 export NVM_DIR="$HOME/.nvm"
+export DOTNET_ROOT=$HOME/.dotnet
+export PATH=$PATH:$DOTNET_ROOT:$DOTNET_ROOT/tools
 
 # ------------------------------------------------------------------------------
 # Apps
@@ -37,6 +39,7 @@ export path=(
 	"$GEM_HOME/bin"
 	"$GOPATH/bin"
 	"$HOME/.cargo/bin"
+	"$DOTNET_ROOT/tools"
 	"/usr/local/opt/ruby/bin"
 	"/usr/local/opt/python/libexec/bin"
 	"/opt/homebrew/bin"
