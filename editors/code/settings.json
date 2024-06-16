@@ -104,6 +104,28 @@
     "extensions.experimental.affinity": {
       "asvetliakov.vscode-neovim": 1
     },
+  // vscode-neovim keybinding
+  {
+    "vscode-neovim.compositeKeys": {
+        "jj": {
+            "command": "vscode-neovim.escape",
+        },
+        "kk": {
+            "command": "vscode-neovim.escape",
+        },
+        "jk": {
+            // Use lua to execute any logic
+            "command": "vscode-neovim.lua",
+            "args": [
+                [
+                    "local code = require('vscode')",
+                    "code.action('vscode-neovim.escape')",
+                    "code.action('workbench.action.files.save')",
+                ],
+            ],
+        }
+    },
+},
     //  fix the remapped escape key not working in Linux VSCode Neovim
     "keyboard.dispatch": "keyCode",
   // Tailwind CSS Intellisense

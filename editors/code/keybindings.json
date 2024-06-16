@@ -289,6 +289,7 @@
   
   -> ma/mA or mi/mI
  */
+/* Pass settings.json because deprecation by plugin
   {
     "command": "vscode-neovim.compositeEscape1",
     "key": "j",
@@ -300,6 +301,13 @@
   "key": "k",
   "when": "neovim.mode == insert && editorTextFocus",
   "args": "k"
+},*/
+// Esc: clear vscode-neovim search results
+{
+  "key": "escape",
+  "command": "vscode-neovim.send",
+  "when": "editorTextFocus && neovim.mode != insert",
+  "args": ":nohl<cr>"
 },
 //pass custom bindings to Neovim, for example C-h
 {
