@@ -138,7 +138,7 @@
   
     // Appearence
     // Temas como CodelyTv, Monokai Pro, Tokyo Night, Atom One Light o Gruvbox son buenos.
-    "workbench.colorTheme": "Codely Dark",
+    "workbench.colorTheme": "Min Dark",
     // animacion de scroll smooth o mas lenta en el workbench
     "workbench.list.smoothScrolling": true,
     // Ver carpetas compactadas(una dentro de otra) en una sola linea
