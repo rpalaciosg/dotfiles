@@ -26,6 +26,7 @@
     ~/.config/lsd/colors.yaml: os/linux/lsd/colors.yaml
     ~/.config/lsd/colors.minimal.yaml: os/linux/lsd/colors.minimal.yaml
     ~/.config/peco/config.json: os/linux/peco/config.json
+    ~/.config/tmux/tmux.conf: os/linux/tmux/tmux.conf
     ~/.config/nvim: editors/nvim
     ~/.config/nvim/init.lua: editors/nvim/init.lua
     ~/.config/nvim/lazy-lock.json: editors/nvim/lazy-lock.json
