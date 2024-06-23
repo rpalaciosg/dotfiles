@@ -9,6 +9,7 @@ setopt +o nomatch
 
 # Start zim
 source "$ZIM_HOME/init.zsh"
+#source "$ZIM_HOME/zimfw.zsh"
 
 # Async mode for autocompletion
 ZSH_AUTOSUGGEST_USE_ASYNC=true
@@ -19,8 +20,8 @@ source "$DOTFILES_PATH/shell/init.sh"
 fpath=("$DOTFILES_PATH/shell/zsh/themes" "$DOTFILES_PATH/shell/zsh/autocompletions" "$DOTLY_PATH/shell/zsh/themes" "$DOTLY_PATH/shell/zsh/completions" $fpath)
 
 autoload -Uz promptinit && promptinit
-prompt ${DOTLY_THEME:-codely}
-#prompt ${DOTLY_THEME:-spaceship}
+#prompt ${DOTLY_THEME:-codely}
+prompt ${DOTLY_THEME:-starship}
 
 #autoload -U promptinit; promptinit
 #prompt spaceship
@@ -37,8 +38,9 @@ export NVM_DIR="/home/richard/.nvm"
 
 export PATH=/home/richard/.local/bin:$PATH
 
-PATH=~/.console-ninja/.bin:$PATH
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+#PATH=~/.console-ninja/.bin:$PATH
+#[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
 # Turso
-export PATH="/home/richard/.turso:$PATH"
+#export PATH="/home/richard/.turso:$PATH"
+eval "$(starship init zsh)"

@@ -1,6 +1,7 @@
 export DOTFILES_PATH="/home/richard/.dotfiles"
 export DOTLY_PATH="$DOTFILES_PATH/modules/dotly"
-export DOTLY_THEME="codely"
+#export DOTLY_THEME="codely"
 #export DOTLY_THEME="spaceship"
 export ZIM_HOME="$DOTLY_PATH/modules/zimfw"
 . "$HOME/.cargo/env"
+eval "$(starship init zsh)"

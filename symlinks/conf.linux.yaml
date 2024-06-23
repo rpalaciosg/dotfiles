@@ -22,6 +22,7 @@
     ~/.config/kitty/themes/diff-frappe.conf: os/linux/kitty/themes/diff-frappe.conf
     ~/.config/kitty/themes/macchiato.conf: os/linux/kitty/themes/macchiato.conf
     ~/.config/kitty/themes/diff-macchiato.conf: os/linux/kitty/themes/diff-macchiato.conf
+    ~/.config/starship.toml: os/linux/starship/starship.toml
     ~/.config/lsd/config.yaml: os/linux/lsd/config.yaml
     ~/.config/lsd/colors.yaml: os/linux/lsd/colors.yaml
     ~/.config/lsd/colors.minimal.yaml: os/linux/lsd/colors.minimal.yaml
