@@ -31,6 +31,7 @@ function gc {
 		git commit -S -m"$1"
 	fi
 }
+
 function yy() {
 	local tmp="$(mktemp -t "yazi-cwd.XXXXXX")"
 	yazi "$@" --cwd-file="$tmp"
