@@ -16,16 +16,19 @@
     ~/.config/lsd/colors.minimal.yaml: os/linux/lsd/colors.minimal.yaml
     ~/.config/peco/config.json: os/linux/peco/config.json
     ~/.config/tmux/tmux.conf: os/linux/tmux/tmux.conf
-    # ~/.config/nvim: editors/nvim
-    # ~/.config/nvim/init.lua: editors/nvim/init.lua
-    # ~/.config/nvim/lazy-lock.json: editors/nvim/lazy-lock.json
-    # ~/.config/nvim/lazyvim.json: editors/nvim/lazyvim.json
-    # ~/.config/nvim/stylua.toml: editors/nvim/stylua.toml
-    # ~/.config/nvim/lua/config/autocmds.lua: editors/nvim/lua/config/autocmds.lua
-    # ~/.config/nvim/lua/config/keymaps.lua: editors/nvim/lua/config/keymaps.lua
-    # ~/.config/nvim/lua/config/lazy.lua: editors/nvim/lua/config/lazy.lua
-    # ~/.config/nvim/lua/config/options.lua: editors/nvim/lua/config/options.lua
-    # ~/.config/nvim/lua/plugins/example.lua: editors/nvim/lua/plugins/example.lua
+    ~/.config/nvim/init.lua: editors/nvim/init.lua
+    ~/.config/nvim/lazyvim.json: editors/nvim/lazyvim.json
+    ~/.config/nvim/lazy-lock.json: editors/nvim/lazy-lock.json
+    ~/.config/nvim/stylua.toml: editors/nvim/stylua.toml
+    ~/.config/nvim/lua/config/lazy.lua: editors/nvim/lua/config/lazy.lua
+    ~/.config/nvim/lua/config/options.lua: editors/nvim/lua/config/options.lua
+    ~/.config/nvim/lua/config/keymaps.lua: editors/nvim/lua/config/keymaps.lua
+    ~/.config/nvim/lua/config/autocmds.lua: editors/nvim/lua/config/autocmds.lua
+    ~/.config/nvim/lua/plugins/init.lua: editors/nvim/lua/plugins/init.lua
+    ~/.config/nvim/lua/plugins/colorscheme.lua: editors/nvim/lua/plugins/colorscheme.lua
+    ~/.config/nvim/lua/plugins/ui.lua: editors/nvim/lua/plugins/ui.lua
+    ~/.config/nvim/lua/richard/discipline.lua: editors/nvim/lua/richard/discipline.lua
+    ~/.config/nvim/lua/richard/hsl.lua: editors/nvim/lua/richard/hsl.lua
     ~/.config/Code/User/settings.json: editors/code/settings.json
     ~/.config/Code/User/keybindings.json: editors/code/keybindings.json
     ~/.config/Code/User/snippets: editors/code/snippets
