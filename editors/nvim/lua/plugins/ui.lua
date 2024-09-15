@@ -148,26 +148,46 @@ return {
 		event = "BufReadPre",
 		priority = 1000,
 		config = function()
-			require("incline").setup({
+      local colors = require("catppuccin.palettes").get_palette()
+      require("incline").setup({
 				highlight = {
 					groups = {
-            InclineNormal = { guibg = "#303030", guifg = "#C0C0C0" },
-            InclineNormalNC = { guifg = "#808080", guibg = "#1C1C1C" },
+          InclineNormal = { guibg = colors.pink, guifg = colors.base },
+          InclineNormalNC = { guibg = colors.surface0, guifg = colors.subtext0 },
 					},
 				},
 				window = { margin = { vertical = 0, horizontal = 1 } },
 				hide = {
 					cursorline = true,
 				},
-				render = function(props)
-					local filename = vim.fn.fnamemodify(vim.api.nvim_buf_get_name(props.buf), ":t")
-					if vim.bo[props.buf].modified then
-						filename = "[+] " .. filename
-					end
 
-					local icon, color = require("nvim-web-devicons").get_icon_color(filename)
-					return { { icon, guifg = color }, { " " }, { filename } }
-				end,
+        render = function(props)
+        local filename = vim.fn.fnamemodify(vim.api.nvim_buf_get_name(props.buf), ":t")
+        local icon, icon_color = require("nvim-web-devicons").get_icon_color(filename)
+        local modified = vim.bo[props.buf].modified
+        local fg = props.focused and colors.base or colors.subtext0
+        local bg = props.focused and colors.pink or colors.surface0
+
+        local mod_color
+        if modified then
+          mod_color = props.focused and colors.peach or colors.maroon
+        else
+          mod_color = bg
+        end
+
+				if vim.bo[props.buf].modified then
+					filename = "[+] " .. filename
+					-- filename = filename .. " [+]"
+				end
+
+        return {
+          { icon, guifg = icon_color, guibg = bg },
+          { " ", guibg = bg },
+          { filename, gui = modified and "bold,italic" or "bold", guifg = fg, guibg = bg },
+          { modified and " ●" or "  ", guifg = mod_color, guibg = bg },
+
+        }
+      end,
 			})
 		end,
 	},
