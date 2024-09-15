@@ -29,6 +29,7 @@
     ~/.config/nvim/lua/plugins/ui.lua: editors/nvim/lua/plugins/ui.lua
     ~/.config/nvim/lua/plugins/editor.lua: editors/nvim/lua/plugins/editor.lua
     ~/.config/nvim/lua/plugins/coding.lua: editors/nvim/lua/plugins/coding.lua
+    ~/.config/nvim/lua/plugins/lsp.lua: editors/nvim/lua/plugins/lsp.lua
     ~/.config/nvim/lua/richard/discipline.lua: editors/nvim/lua/richard/discipline.lua
     ~/.config/nvim/lua/richard/hsl.lua: editors/nvim/lua/richard/hsl.lua
     ~/.config/Code/User/settings.json: editors/code/settings.json
