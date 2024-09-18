@@ -127,7 +127,9 @@ return {
   -- buffer line
 	{
 		"akinsho/bufferline.nvim",
+    dependencies = {"nvim-tree/nvim-web-devicons"},
 		event = "VeryLazy",
+    version = "*",
 		keys = {
 			{ "<Tab>", "<Cmd>BufferLineCycleNext<CR>", desc = "Next tab" },
 			{ "<S-Tab>", "<Cmd>BufferLineCyclePrev<CR>", desc = "Prev tab" },
@@ -135,7 +137,7 @@ return {
 		opts = {
 			options = {
 				mode = "tabs",
-				-- separator_style = "slant",
+				separator_style = "slant",
 				show_buffer_close_icons = false,
 				show_close_icon = false,
 			},
