@@ -197,6 +197,7 @@ return {
   -- statusline
 	{
 		"nvim-lualine/lualine.nvim",
+    dependencies = {"nvim-tree/nvim-web-devicons"},
 		opts = function(_, opts)
 			local LazyVim = require("lazyvim.util")
 			opts.sections.lualine_c[4] = {
@@ -225,5 +226,4 @@ return {
 		},
 		keys = { { "<leader>z", "<cmd>ZenMode<cr>", desc = "Zen Mode" } },
 	},
-
 }
