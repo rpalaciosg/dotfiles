@@ -30,6 +30,10 @@
     ~/.config/nvim/lua/plugins/editor.lua: editors/nvim/lua/plugins/editor.lua
     ~/.config/nvim/lua/plugins/coding.lua: editors/nvim/lua/plugins/coding.lua
     ~/.config/nvim/lua/plugins/lsp.lua: editors/nvim/lua/plugins/lsp.lua
+    ~/.config/nvim/lua/plugins/treesitter.lua: editors/nvim/lua/plugins/treesitter.lua
+    ~/.config/nvim/lua/plugins/telescope.lua: editors/nvim/lua/plugins/telescope.lua
+    ~/.config/nvim/lua/plugins/trouble.lua: editors/nvim/lua/plugins/trouble.lua
+    ~/.config/nvim/lua/plugins/todo-comments.lua: editors/nvim/lua/plugins/todo-comments.lua
     ~/.config/nvim/lua/richard/discipline.lua: editors/nvim/lua/richard/discipline.lua
     ~/.config/nvim/lua/richard/hsl.lua: editors/nvim/lua/richard/hsl.lua
     ~/.config/Code/User/settings.json: editors/code/settings.json
