@@ -38,6 +38,7 @@ local opts = {
     lazy = false,
     version = false, -- always use the latest git commit
   },
+  change_detection = { notify = false },
   checker = {
     enabled = true, -- check for plugin updates periodically
     notify = false, -- notify on update
