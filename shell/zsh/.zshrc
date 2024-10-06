@@ -1,15 +1,27 @@
 # Uncomment for debuf with `zprof`
 # zmodload zsh/zprof
 
+# export ZIM_HOME=${ZDOTDIR:-$HOME}/.zim
+# export ZIM_HOME="/home/richard/.dotfiles/modules/dotly/modules/zimfw"
+export ZIM_HOME="${ZDOTDIR:-$HOME}/.dotfiles/modules/dotly/modules/zimfw"
+export PATH="$ZIM_HOME:$PATH"
+
+
 # ZSH Ops
 setopt HIST_IGNORE_ALL_DUPS
 setopt HIST_FCNTL_LOCK
 setopt +o nomatch
 # setopt autopushd
 
+echo "Cargando Zim..."
+
 # Start zim
-source "$ZIM_HOME/init.zsh"
+# source "$ZIM_HOME/init.zsh"
 #source "$ZIM_HOME/zimfw.zsh"
+# Initialize Zim
+if [[ -s ${ZIM_HOME}/init.zsh ]]; then
+  # source "$ZIM_HOME/zimfw.zsh"
+fi
 
 # Async mode for autocompletion
 ZSH_AUTOSUGGEST_USE_ASYNC=true
@@ -20,12 +32,9 @@ source "$DOTFILES_PATH/shell/init.sh"
 fpath=("$DOTFILES_PATH/shell/zsh/themes" "$DOTFILES_PATH/shell/zsh/autocompletions" "$DOTLY_PATH/shell/zsh/themes" "$DOTLY_PATH/shell/zsh/completions" $fpath)
 
 autoload -Uz promptinit && promptinit
-#prompt ${DOTLY_THEME:-codely}
+# prompt ${DOTLY_THEME:-codely}
 prompt ${DOTLY_THEME:-starship}
 
-#autoload -U promptinit; promptinit
-#prompt spaceship
-#prompt ${DOTLY_THEME:-spaceship}
 
 source "$DOTLY_PATH/shell/zsh/bindings/dot.zsh"
 source "$DOTLY_PATH/shell/zsh/bindings/reverse_search.zsh"

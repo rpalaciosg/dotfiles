@@ -8,8 +8,4 @@ zmodule zsh-users/zsh-syntax-highlighting
 zmodule zimfw/completion
 
 zhighlighters=(main brackets)
-#zmodule denysdovhan/spaceship-prompt --name spaceship
-#zmodule spaceship-prompt/spaceship-prompt --name spaceship
-#zmodule spaceship-prompt/spaceship-prompt --name spaceship --no-submodule
 zmodule joke/zim-starship
-#eval "$(starship init zsh)"
