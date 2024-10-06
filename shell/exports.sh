@@ -1,4 +1,10 @@
 # ------------------------------------------------------------------------------
+# Zimfw configuration
+# ------------------------------------------------------------------------------
+export ZIM_HOME="${ZDOTDIR:-$HOME}/.dotfiles/modules/dotly/modules/zimfw"
+export PATH="$ZIM_HOME:$PATH"
+
+# ------------------------------------------------------------------------------
 # Codely theme config
 # ------------------------------------------------------------------------------
 export CODELY_THEME_MINIMAL=false
@@ -42,7 +48,7 @@ export path=(
   "$DOTNET_ROOT/tools"
   "/usr/local/opt/ruby/bin"
   "/usr/local/opt/python/libexec/bin"
-  #"/opt/homebrew/bin"
+  "$HOME/.local/bin"
   "/usr/local/bin"
   "/usr/local/sbin"
   "/bin"
@@ -54,10 +60,10 @@ export path=(
   "/home/richard/.local/bin:$PATH"
   "/usr/local/go/bin"
   "$HOME/.cargo/bin"
-  # Añadir el path a zimfw y starship si no está
   "$HOME/.zimfw/bin:$PATH"
   # "/home/richard/.turso:$PATH"
 )
 
+export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"
