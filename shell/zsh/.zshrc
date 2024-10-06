@@ -1,8 +1,6 @@
 # Uncomment for debuf with `zprof`
 # zmodload zsh/zprof
 
-# export ZIM_HOME=${ZDOTDIR:-$HOME}/.zim
-# export ZIM_HOME="/home/richard/.dotfiles/modules/dotly/modules/zimfw"
 export ZIM_HOME="${ZDOTDIR:-$HOME}/.dotfiles/modules/dotly/modules/zimfw"
 export PATH="$ZIM_HOME:$PATH"
 
@@ -32,8 +30,8 @@ source "$DOTFILES_PATH/shell/init.sh"
 fpath=("$DOTFILES_PATH/shell/zsh/themes" "$DOTFILES_PATH/shell/zsh/autocompletions" "$DOTLY_PATH/shell/zsh/themes" "$DOTLY_PATH/shell/zsh/completions" $fpath)
 
 autoload -Uz promptinit && promptinit
-# prompt ${DOTLY_THEME:-codely}
-prompt ${DOTLY_THEME:-starship}
+prompt ${DOTLY_THEME:-codely}
+# prompt ${DOTLY_THEME:-starship}
 
 
 source "$DOTLY_PATH/shell/zsh/bindings/dot.zsh"

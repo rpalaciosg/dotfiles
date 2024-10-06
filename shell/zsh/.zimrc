@@ -8,4 +8,3 @@ zmodule zsh-users/zsh-syntax-highlighting
 zmodule zimfw/completion
 
 zhighlighters=(main brackets)
-zmodule joke/zim-starship
