@@ -104,7 +104,6 @@ return {
         "vue",
         "cmake",
         "java",
-        "c#",
       },
       incremental_selection = {
         enable = true,
