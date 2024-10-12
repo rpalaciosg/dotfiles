@@ -54,6 +54,7 @@ opt.splitright = true -- split vertical window to the right
 opt.splitkeep = "cursor"
 opt.mouse = ""
 
+opt.colorcolumn = "120"
 
 -- turn off swapfile
 opt.swapfile = false
@@ -68,5 +69,5 @@ opt.formatoptions:append({ "r" })
 vim.cmd([[au BufNewFile,BufRead *.astro setf astro]])
 
 if vim.fn.has("nvim-0.8") == 1 then
-	vim.opt.cmdheight = 0
+  vim.opt.cmdheight = 0
 end
