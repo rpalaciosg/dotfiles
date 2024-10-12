@@ -27,7 +27,7 @@
     ~/.config/nvim/lua/config/autocmds.lua: editors/nvim/lua/config/autocmds.lua
     ~/.config/nvim/lua/plugins/init.lua: editors/nvim/lua/plugins/init.lua
     ~/.config/nvim/lua/plugins/coding.lua: editors/nvim/lua/plugins/coding.lua
-    ~/.config/nvim/lua/plugins/colorscheme.lua: editors/nvim/lua/plugins/clorscheme.lua
+    ~/.config/nvim/lua/plugins/colorscheme.lua: editors/nvim/lua/plugins/colorscheme.lua
     ~/.config/nvim/lua/plugins/editor.lua: editors/nvim/lua/plugins/editor.lua
     ~/.config/nvim/lua/plugins/lsp.lua: editors/nvim/lua/plugins/lsp.lua
     ~/.config/nvim/lua/plugins/telescope.lua: editors/nvim/lua/plugins/telescope.lua
