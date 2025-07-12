@@ -263,7 +263,6 @@
     "console-ninja.featureSet": "Community",
     "cSpell.enabled": false,
     "terminal.integrated.env.linux": {},
-    "workbench.activityBar.location": "hidden",
     // Others
     // Extension Jump to test de Blake Herington
     // Se agrega un keybinding shift+ctrl+t
