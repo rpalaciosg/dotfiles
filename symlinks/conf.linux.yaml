@@ -7,38 +7,12 @@
 
 - link:
     ~/.dotly: os/linux/.dotly
-    ~/.config/kitty/kitty.conf: os/linux/kitty/kitty.conf
-    ~/.config/kitty/current-theme.conf: os/linux/kitty/current-theme.conf
-    ~/.config/kitty/font-nerd-symbols.conf: os/linux/kitty/font-nerd-symbols.conf
+    ~/.config/kitty: os/linux/kitty
     ~/.config/starship.toml: os/linux/starship/starship.toml
-    ~/.config/lsd/config.yaml: os/linux/lsd/config.yaml
-    ~/.config/lsd/colors.yaml: os/linux/lsd/colors.yaml
-    ~/.config/lsd/colors.minimal.yaml: os/linux/lsd/colors.minimal.yaml
-    ~/.config/peco/config.json: os/linux/peco/config.json
-    ~/.config/tmux/tmux.conf: os/linux/tmux/tmux.conf
-    ~/.config/nvim/init.lua: editors/nvim/init.lua
-    ~/.config/nvim/.neoconf.json: editors/nvim/.neoconf.json
-    ~/.config/nvim/lazyvim.json: editors/nvim/lazyvim.json
-    ~/.config/nvim/lazy-lock.json: editors/nvim/lazy-lock.json
-    ~/.config/nvim/stylua.toml: editors/nvim/stylua.toml
-    ~/.config/nvim/lua/config/lazy.lua: editors/nvim/lua/config/lazy.lua
-    ~/.config/nvim/lua/config/options.lua: editors/nvim/lua/config/options.lua
-    ~/.config/nvim/lua/config/keymaps.lua: editors/nvim/lua/config/keymaps.lua
-    ~/.config/nvim/lua/config/autocmds.lua: editors/nvim/lua/config/autocmds.lua
-    ~/.config/nvim/lua/plugins/init.lua: editors/nvim/lua/plugins/init.lua
-    ~/.config/nvim/lua/plugins/coding.lua: editors/nvim/lua/plugins/coding.lua
-    ~/.config/nvim/lua/plugins/colorscheme.lua: editors/nvim/lua/plugins/colorscheme.lua
-    ~/.config/nvim/lua/plugins/editor.lua: editors/nvim/lua/plugins/editor.lua
-    ~/.config/nvim/lua/plugins/lsp.lua: editors/nvim/lua/plugins/lsp.lua
-    ~/.config/nvim/lua/plugins/telescope.lua: editors/nvim/lua/plugins/telescope.lua
-    ~/.config/nvim/lua/plugins/todo-comments.lua: editors/nvim/lua/plugins/todo-comments.lua
-    ~/.config/nvim/lua/plugins/treesitter.lua: editors/nvim/lua/plugins/treesitter.lua
-    ~/.config/nvim/lua/plugins/trouble.lua: editors/nvim/lua/plugins/trouble.lua
-    ~/.config/nvim/lua/plugins/ui.lua: editors/nvim/lua/plugins/ui.lua
-    ~/.config/nvim/lua/richard/discipline.lua: editors/nvim/lua/richard/discipline.lua
-    ~/.config/nvim/lua/richard/hsl.lua: editors/nvim/lua/richard/hsl.lua
-    ~/.config/nvim/lua/richard/lsp.lua: editors/nvim/lua/richard/hsl.lua
-    ~/.config/nvim/lua/util/debug.lua: editors/nvim/lua/util/debug.lua
+    ~/.config/lsd: os/linux/lsd
+    ~/.config/peco: os/linux/peco
+    ~/.config/tmux: os/linux/tmux
+    ~/.config/nvim: editors/nvim
     ~/.config/Code/User/settings.json: editors/code/settings.json
     ~/.config/Code/User/keybindings.json: editors/code/keybindings.json
     ~/.config/Code/User/snippets: editors/code/snippets
