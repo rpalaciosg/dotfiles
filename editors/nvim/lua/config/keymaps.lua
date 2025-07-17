@@ -2,9 +2,9 @@
 -- Default keymaps that are always set: https://github.com/LazyVim/LazyVim/blob/main/lua/lazyvim/config/keymaps.lua
 -- Add any additional keymaps here
 vim.g.mapleader = " "
-local discipline = require("richard.discipline")
-
-discipline.cowboy()
+-- local discipline = require("richard.discipline")
+--
+-- discipline.cowboy()
 
 local keymap = vim.keymap -- for conciseness
 local opts = { noremap = true, silent = true }
@@ -49,5 +49,31 @@ keymap.set("n", "<leader>tp", "<cmd>tabp<CR>", { desc = "Go to previous tab" }) 
 keymap.set("n", "<leader>tf", "<cmd>tabnew %<CR>", { desc = "Open current buffer in new tab" }) --  move current buffer to new tab
 
 keymap.set("n", "<leader>r", function()
-	require("richard.hsl").replaceHexWithHSL()
+  require("richard.hsl").replaceHexWithHSL()
 end)
+
+-- Neo-tree keymaps
+-- keymap.set("n","<leader>e","<cmd>Neotree toggle<cr>", { desc = "Toggle Explorer" })
+
+-- Redefine Ctrl + s to save with the custom function
+vim.api.nvim_set_keymap("n", "<C-s>", ":lua SaveFile()<CR>", { noremap = true, silent = true })
+
+-- Custom save function
+function SaveFile()
+  --Check if a buffer with a file is open
+  if vim.fn.empty(vim.fn.expand("%:t")) == 1 then
+    vim.notify("No file to save", vim.log.levels.WARN)
+    return
+  end
+
+  local filename = vim.fn.expand("%:t") --Get only the filename
+  local success, err = pcall(function()
+    vim.cmd("silent! write") -- try to save the file without showing the default message
+  end)
+
+  if success then
+    vim.notify(filename .. " Saved!") -- Show only the custom message if succesful
+  else
+    vim.notify("Error: " .. err, vim.log.levels.ERROR) -- Show the error message if it fails
+  end
+end

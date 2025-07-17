@@ -1,34 +1,35 @@
 return {
-  'nvim-telescope/telescope.nvim',
-  branch = '0.1.x',
+  "nvim-telescope/telescope.nvim",
+  branch = "0.1.x",
   dependencies = {
-    'nvim-lua/plenary.nvim',
-    {'nvim-telescope/telescope-fzf-native.nvim', build = 'make' },
-    'nvim-tree/nvim-web-devicons',
-    'folke/todo-comments.nvim',
+    "nvim-lua/plenary.nvim",
+    { "nvim-telescope/telescope-fzf-native.nvim", build = "make" },
+    "nvim-tree/nvim-web-devicons",
+    "folke/todo-comments.nvim",
+    "nvim-telescope/telescope-file-browser.nvim",
   },
   config = function()
-    local telescope = require('telescope')
-    local actions = require('telescope.actions')
-    local transform_mod = require('telescope.actions.mt').transform_mod
+    local telescope = require("telescope")
+    local actions = require("telescope.actions")
+    local transform_mod = require("telescope.actions.mt").transform_mod
 
-    local trouble = require('trouble')
-    local trouble_telescope = require('trouble.sources.telescope')
+    local trouble = require("trouble")
+    local trouble_telescope = require("trouble.sources.telescope")
 
     --or create your custom actions
     local custom_actions = transform_mod({
       open_trouble_qflist = function(prompt_bufnr)
-        trouble.toggle('quickfix')
+        trouble.toggle("quickfix")
       end,
     })
 
     telescope.setup({
       defaults = {
-        path_display = {'smart'},
+        path_display = { "smart" },
         mappings = {
           i = {
-             ["<C-k>"] = actions.move_selection_previous,
-           ["<C-j>"] = actions.move_selection_next,
+            ["<C-k>"] = actions.move_selection_previous,
+            ["<C-j>"] = actions.move_selection_next,
             ---@type Action
             ["<C-q>"] = actions.send_selected_to_qflist + custom_actions.open_trouble_qflist,
             ["<C-t>"] = trouble_telescope.open,
@@ -37,7 +38,7 @@ return {
       },
     })
 
-    telescope.load_extension('fzf')
+    telescope.load_extension("fzf")
 
     -- set keymaps
     local keymap = vim.keymap -- for conciseness
@@ -47,7 +48,5 @@ return {
     keymap.set("n", "<leader>fs", "<cmd>Telescope live_grep<cr>", { desc = "Find string in cwd" })
     keymap.set("n", "<leader>fc", "<cmd>Telescope grep_string<cr>", { desc = "Find string under cursor in cwd" })
     keymap.set("n", "<leader>ft", "<cmd>TodoTelescope<cr>", { desc = "Find todos" })
-
-  end
+  end,
 }
-
