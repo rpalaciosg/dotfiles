@@ -7,6 +7,7 @@
 
 - link:
     ~/.dotly: os/linux/.dotly
+    ~/.zimrc: shell/zsh/.zimrc
     ~/.config/kitty: os/linux/kitty
     ~/.config/starship.toml: os/linux/starship/starship.toml
     ~/.config/lsd: os/linux/lsd
@@ -17,3 +18,4 @@
     ~/.config/Code/User/keybindings.json: editors/code/keybindings.json
     ~/.config/Code/User/snippets: editors/code/snippets
     ~/.gitconfig: git/.gitconfig
+
