@@ -1,0 +1,145 @@
+# ~/.config/tmux/tmux.conf
+# Tema: Monokai Pro — misma estructura que kanagawa, colores actualizados
+
+set -ag terminal-overrides ",xterm-256color:RGB"
+
+set -g base-index 1
+set -g pane-base-index 1
+set-window-option -g pane-base-index 1
+set-option -g renumber-windows on
+set-option -g status-position top
+
+# Prefix
+set -g prefix C-d
+unbind C-b
+bind-key C-d send-prefix
+
+# ======================
+# Terminal Integration
+# ======================
+set -g set-clipboard on
+set -g focus-events on
+set -g terminal-overrides "xterm*:XT:smcup@:rmcup@"
+set -ga update-environment TERM
+set -ga update-environment TERM_PROGRAM
+
+unbind r
+bind r source-file ~/.config/tmux/tmux.conf \; display "tmux.conf recargado ✓"
+
+# ======================
+# Paneles y ventanas
+# ======================
+unbind %
+bind | split-window -h -c "#{pane_current_path}"
+unbind '"'
+bind - split-window -v -c "#{pane_current_path}"
+
+bind -r j resize-pane -D 5
+bind -r k resize-pane -U 5
+bind -r l resize-pane -R 5
+bind -r h resize-pane -L 5
+bind -r m resize-pane -Z
+
+# ======================
+# Comportamiento
+# ======================
+set -g mouse on
+set -sg escape-time 10
+
+set-window-option -g mode-keys vi
+bind-key -T copy-mode-vi 'v'   send -X begin-selection
+bind-key -T copy-mode-vi 'C-v' send -X rectangle-toggle
+bind-key -T copy-mode-vi 'y'   send-keys -X copy-selection-and-cancel
+unbind -T copy-mode-vi MouseDragEnd1Pane
+
+# ======================
+# Paleta Monokai Pro
+# bg_dark   = #221f22   (barra de fondo)
+# bg        = #2d2a2e   (fondo paneles)
+# bg_light  = #403e41   (separadores/inactivo)
+# fg        = #fcfcfa   (texto principal)
+# gray      = #939293   (texto secundario)
+# red       = #ff6188   (acento — ventana activa, prefijo)
+# purple    = #ab9df2   (sesión)
+# green     = #a9dc76   (git / OK)
+# yellow    = #ffd866   (hora)
+# orange    = #fc9867   (batería / clima)
+# cyan      = #78dce8   (SSH / usuario)
+# ======================
+
+# Fondo de la barra
+set -g status-style          "bg=#221f22,fg=#939293"
+set -g status-left-length    50
+set -g status-right-length   180
+
+# ── Sección izquierda: sesión ──────────────────────────────────
+# Mismo comportamiento que kanagawa: cambia color cuando prefix activo
+set -g status-left \
+  "#{?client_prefix,#[fg=#2d2a2e],#[fg=#2d2a2e]}#{?client_prefix,#[bg=#ffd866],#[bg=#ab9df2]} #S #{?client_prefix,#[fg=#ffd866],#[fg=#ab9df2]}#[bg=#221f22]"
+
+# ── Ventana activa ─────────────────────────────────────────────
+set -g window-status-current-format \
+  "#[fg=#221f22,bg=#403e41]#[fg=#fcfcfa,bg=#403e41] #I #W#{?window_flags,#[fg=#ff6188]#{window_flags},} #[fg=#403e41,bg=#221f22]"
+
+# ── Ventanas inactivas ─────────────────────────────────────────
+set -g window-status-format \
+  "#[fg=#221f22,bg=#2d2a2e]#[fg=#939293,bg=#2d2a2e] #I #W #{?window_flags,#[fg=#5b595c]#{window_flags},}#[fg=#2d2a2e,bg=#221f22]"
+
+set -g window-status-separator ""
+
+# ── Sección derecha: batería + SSH + hora + clima ──────────────
+# Mantiene los mismos scripts de tmux-kanagawa, solo cambia colores
+set -g status-right \
+  "#(~/.config/tmux/plugins/tpm/tmux-continuum/scripts/continuum_save.sh)\
+#[fg=#ff6188,bg=#221f22,nobold,nounderscore,noitalics]\
+#[fg=#2d2a2e,bg=#ff6188] #(~/.config/tmux/plugins/tpm/tmux-kanagawa/scripts/battery.sh) \
+#[fg=#ab9df2,bg=#ff6188,nobold,nounderscore,noitalics]\
+#[fg=#2d2a2e,bg=#ab9df2] #(~/.config/tmux/plugins/tpm/tmux-kanagawa/scripts/ssh_session.sh false) \
+#[fg=#ffd866,bg=#ab9df2,nobold,nounderscore,noitalics]\
+#[fg=#2d2a2e,bg=#ffd866] %a %m/%d %I:%M %p #(date +%Z)  \
+#[fg=#fc9867,bg=#ffd866,nobold,nounderscore,noitalics]\
+#[fg=#2d2a2e,bg=#fc9867] #(~/.config/tmux/plugins/tpm/tmux-kanagawa/scripts/weather_wrapper.sh false true 'Cuenca, Azuay') "
+
+# ── Bordes de paneles ──────────────────────────────────────────
+set -g pane-border-style        "fg=#403e41"
+set -g pane-active-border-style "fg=#ab9df2"
+
+# ── Mensajes y copy mode ───────────────────────────────────────
+set -g message-style  "bg=#ffd866,fg=#2d2a2e,bold"
+set -g mode-style     "bg=#5b595c,fg=#fcfcfa"
+
+# ======================
+# Plugins
+# ======================
+set-environment -g TMUX_PLUGIN_MANAGER_PATH '~/.config/tmux/plugins/tpm'
+
+set -g @plugin 'tmux-plugins/tpm'
+set -g @plugin 'tmux-plugins/tmux-sensible'
+##### para pruebas
+set -g @plugin 'maxpetretta/tmux-monokai-pro'
+##### fin pruebas
+set -g @plugin 'christoomey/vim-tmux-navigator'
+set -g @plugin 'ofirgall/tmux-window-name'
+
+# ======================
+# Resurrect & Continuum
+# ======================
+set -g @plugin 'tmux-plugins/tmux-resurrect'
+set -g @plugin 'tmux-plugins/tmux-continuum'
+
+set -g @resurrect-capture-pane-contents 'on'
+set -g @resurrect-strategy-vim  'session'
+set -g @resurrect-strategy-nvim 'session'
+set -g @continuum-save-interval '15'
+
+bind-key S run-shell '~/.config/tmux/plugins/tpm/tmux-resurrect/scripts/save.sh'
+bind-key R run-shell '~/.config/tmux/plugins/tpm/tmux-resurrect/scripts/restore.sh'
+bind-key C run-shell 'rm ~/.config/tmux/resurrect/last'
+
+# ======================
+# Variables de entorno
+# ======================
+set-environment -g NVM_DIR "$HOME/.nvm"
+
+# TPM debe ir al final
+run ~/.config/tmux/plugins/tpm/tpm
