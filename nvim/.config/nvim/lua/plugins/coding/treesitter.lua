@@ -58,6 +58,7 @@ return {
           "http",
           "sql",
           "cmake",
+          "c_sharp",
         },
         -- Habilitar Textobjects
         textobjects = {

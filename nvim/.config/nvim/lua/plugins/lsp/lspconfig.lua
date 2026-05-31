@@ -20,7 +20,10 @@ return {
             package_uninstalled = "✗",
           },
         },
-        registries = { "github:mason-org/mason-registry" },
+        registries = {
+          "github:mason-org/mason-registry",
+          "github:Crashdummyy/mason-registry",
+        },
       })
     end,
   },
@@ -39,6 +42,7 @@ return {
           "black",
           "eslint_d",
           "js-debug-adapter",
+          "roslyn",
         },
         auto_update = true,
         run_on_start = false,
