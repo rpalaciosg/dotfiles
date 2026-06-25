@@ -113,6 +113,14 @@ function M.setup()
     { "<leader>r", desc = "Substitute (visual)", mode = "v" },
 
     -- ══════════════════════════════════════════════════════════
+    -- HTTP REQUESTS (kulala)  <leader>r  (solo en .http)
+    -- ══════════════════════════════════════════════════════════
+    { "<leader>rr", desc = "Run HTTP request", ft = "http" },
+    { "<leader>ra", desc = "Run all requests", ft = "http" },
+    { "<leader>rp", desc = "Previous request", ft = "http" },
+    { "<leader>rn", desc = "Next request", ft = "http" },
+
+    -- ══════════════════════════════════════════════════════════
     -- EXPLORER  <leader>e
     -- ══════════════════════════════════════════════════════════
     { "<leader>e", group = "Explorer (Neo-tree)" },
