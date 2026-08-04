@@ -10,6 +10,13 @@ require("config.options")
 require("config.keymaps")
 require("config.autocmds")
 
+-- Polyfill: vim.fs.ext was removed in Neovim 0.12
+if not vim.fs.ext then
+  vim.fs.ext = function(name)
+    return vim.fn.fnamemodify(name, ":e")
+  end
+end
+
 if is_vscode then
   require("config.vscode").setup()
 else
