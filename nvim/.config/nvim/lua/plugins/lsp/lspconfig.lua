@@ -71,6 +71,7 @@ return {
           "jsonls",
           "dockerls",
           "yamlls",
+          "marksman",
         },
         automatic_enable = false,
       })
@@ -187,6 +188,12 @@ return {
         vim.lsp.config(server, {})
       end
 
+      -- marksman (markdown LSP)
+      vim.lsp.config("marksman", {
+        root_markers = { ".git", ".marksman.toml", "markdownlint.json", "*.md" },
+        filetypes = { "markdown", "quarto", "rmd", "typst" },
+      })
+
       -- Activar todos
       vim.lsp.enable({
         "lua_ls",
@@ -203,6 +210,7 @@ return {
         "jsonls",
         "dockerls",
         "yamlls",
+        "marksman",
       })
     end,
   },

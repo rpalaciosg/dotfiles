@@ -16,9 +16,17 @@ return function()
   -- Disable the concealing in some file formats
   -- The default conceallevel is 3 in LazyVim
   vim.api.nvim_create_autocmd("FileType", {
-    pattern = { "json", "jsonc", "markdown" },
+    pattern = { "json", "jsonc" },
     callback = function()
       vim.opt.conceallevel = 0
+    end,
+  })
+
+  -- markdown necesita conceallevel 1 o 2 para las features de obsidian.nvim
+  vim.api.nvim_create_autocmd("FileType", {
+    pattern = { "markdown", "quarto", "rmd" },
+    callback = function()
+      vim.opt.conceallevel = 2
     end,
   })
 

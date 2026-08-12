@@ -42,8 +42,27 @@ function M.setup()
     { "<leader>gB", desc = "Toggle line blame" },
     { "<leader>gd", desc = "Diff this" },
     { "<leader>gD", desc = "Diff this ~" },
+    { "<leader>gf", desc = "Open markdown link", ft = { "markdown", "quarto", "rmd", "typst", "asciidoc" } },
     { "]h", desc = "Next hunk" },
     { "[h", desc = "Prev hunk" },
+
+    -- ══════════════════════════════════════════════════════════
+    -- OBSIDIAN  <leader>o  (solo visible dentro del vault)
+    -- ══════════════════════════════════════════════════════════
+    {
+      "<leader>o",
+      group = "Obsidian",
+      cond = function()
+        local buf_dir = vim.fs.dirname(vim.api.nvim_buf_get_name(0))
+        return buf_dir and vim.startswith(vim.fs.normalize(buf_dir), vim.fs.normalize(vim.fn.expand("~/obsidian/my_vault")))
+      end,
+    },
+    { "<leader>oo", desc = "Open link", cond = function() return vim.bo.filetype == "markdown" end },
+    { "<leader>on", desc = "New note", cond = function() return vim.bo.filetype == "markdown" end },
+    { "<leader>os", desc = "Search notes", cond = function() return vim.bo.filetype == "markdown" end },
+    { "<leader>ob", desc = "Backlinks", cond = function() return vim.bo.filetype == "markdown" end },
+    { "<leader>ot", desc = "Today note", cond = function() return vim.bo.filetype == "markdown" end },
+    { "<leader>oc", desc = "Toggle checkbox", cond = function() return vim.bo.filetype == "markdown" end },
 
     -- ══════════════════════════════════════════════════════════
     -- DIAGNÓSTICOS LSP  <leader>d

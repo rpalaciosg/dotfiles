@@ -216,4 +216,47 @@ return {
     "sphamba/smear-cursor.nvim",
     opts = {},
   },
+  ---------------------
+  --- markview ---
+  ---------------------
+  {
+    "OXY2DEV/markview.nvim",
+    ft = { "markdown", "quarto", "rmd", "typst", "asciidoc" },
+    dependencies = {
+      "nvim-treesitter/nvim-treesitter",
+      "nvim-tree/nvim-web-devicons",
+    },
+    opts = {
+      preview = {
+        enable = true,
+        modes = { "n", "no", "c" },
+        hybrid_modes = {},
+        max_buf_lines = 1000,
+      },
+      markdown = {
+        enable = true,
+        headings = {
+          enable = true,
+        },
+        list_items = {
+          enable = true,
+          conceal_on_checkboxes = true,
+        },
+      },
+      markdown_inline = {
+        enable = true,
+      },
+      html = {
+        enable = true,
+      },
+    },
+    keys = {
+      {
+        "<leader>gf",
+        "<CMD>Markview open<CR>",
+        ft = { "markdown", "quarto", "rmd", "typst", "asciidoc" },
+        desc = "Open markdown link under cursor",
+      },
+    },
+  },
 }

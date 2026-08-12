@@ -36,6 +36,26 @@ keymap.set("n", "dw", 'vb"_d')
 -- Select all
 keymap.set("n", "<C-a>", "gg<S-v>G")
 
+-- Open Obsidian vault (modo Obsidian) / toggle para salir
+local VAULT_DIR = "~/obsidian/my_vault"
+vim.g.obsidian_prev_dir = nil
+keymap.set("n", "<leader>ov", function()
+  local current = vim.fn.getcwd()
+  local vault = vim.fn.expand(VAULT_DIR)
+  if current == vault then
+    local prev = vim.g.obsidian_prev_dir
+    if prev and vim.fn.isdirectory(prev) == 1 then
+      vim.cmd("cd " .. vim.fn.fnameescape(prev))
+      vim.notify("Modo Obsidian: saliendo del vault → " .. prev, vim.log.levels.INFO)
+    end
+  else
+    vim.g.obsidian_prev_dir = current
+    vim.cmd("cd " .. vim.fn.fnameescape(vault))
+    vim.cmd("edit Home.md")
+    vim.notify("Modo Obsidian: vault abierto en " .. vault, vim.log.levels.INFO)
+  end
+end, { desc = "Toggle Obsidian vault" })
+
 -- window management
 keymap.set("n", "<leader>sv", "<C-w>v", { desc = "Split window vertically" })                   -- split window vertically
 keymap.set("n", "<leader>sh", "<C-w>s", { desc = "Split window horizontally" })                 -- split window horizontally
