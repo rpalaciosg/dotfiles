@@ -10,7 +10,14 @@ return {
       -- NVim 0.12 removed vim.lsp.diagnostic._refresh; polyfill it
       vim.lsp.diagnostic._refresh = function() end
 
+      -- Daemon mode is omitted because the installed Roslyn server 5.8 does not accept --daemon-mode.
       vim.lsp.config("roslyn", {
+        cmd = {
+          require("roslyn.utils").get_roslyn_lsp_path(),
+          "--stdio",
+          "--clientProcessId",
+          tostring(vim.uv.os_getpid()),
+        },
         on_attach = on_attach,
         settings = {
           ["csharp|code_lens"] = {
