@@ -5,7 +5,8 @@ return {
   {
     "lukas-reineke/indent-blankline.nvim",
     main = "ibl",
-    event = { "BufReadPre", "BufNewFile" },
+    -- IBL refreshes other windows during setup; wait until the file is read.
+    event = { "BufReadPost", "BufNewFile" },
     opts = {
       indent = {
         char = "▏", -- Alternativas: "┊", "│", "┆", "┇"
