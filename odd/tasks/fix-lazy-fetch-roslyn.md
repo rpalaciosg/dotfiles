@@ -45,7 +45,7 @@ Make `lazy.nvim` plugin updates complete without fetch failures/timeouts while k
 
 - [x] **T1 — Bound lazy git concurrency** (`lua/config/lazy.lua`)
   Set `concurrency = 4`, `git.timeout = 300`, and `checker.concurrency = 4`. Keeps SSH, avoids ~67 simultaneous SSH sessions and the 120 s kill.
-  Check: headless config load exit 0; `Lazy! check` completed with 65/67 fetches OK over SSH; 2 plugins still hit intermittent port-22 timeouts.
+  Check: headless config load exit 0; after routing GitHub SSH through 443, `Lazy! check` completed with 66/66 fetches OK and zero timeouts.
   Commit: `0c23228 fix(nvim): bound lazy fetch concurrency`.
 
 - [x] **T2 — Restore Roslyn with the installed server** (`lua/plugins/lsp/roslyn.lua`)
@@ -72,10 +72,10 @@ Make `lazy.nvim` plugin updates complete without fetch failures/timeouts while k
 - 2026-11-24: installed Roslyn binary `--version` = `5.8.0-1.26276.4+b1a4195`; `--help` has no `--daemon-mode`.
 - 2026-11-24: old `roslyn.nvim` commit `7d8c166` used `cmd = { path, "--stdio" }` and no stated server floor; new `bf1bd4e` adds `--daemon-mode` and requires `>= 5.12.0-1.26453.19`.
 - 2026-11-24: `ssh -T git@github.com` authenticated as `rpalaciosg`; SSH port 443 against `ssh.github.com` also authenticated with the same keys.
-- 2026-11-24: config load `nvim --headless ...` exit 0; `Lazy! check` exit 0, 65/67 fetches OK, 2 intermittent port-22 timeouts (`nvim-treesitter`, `nvim-ts-autotag`).
+- 2026-11-24: config load `nvim --headless ...` exit 0. First `Lazy! check` had 65/67 fetches OK with 2 intermittent port-22 timeouts (`nvim-treesitter`, `nvim-ts-autotag`). After the user approved routing GitHub SSH through 443, `~/.ssh/config` was added (`HostName ssh.github.com`, `Port 443`, `HostKeyAlias github.com`); `ssh -T git@github.com` then connected to port 443 and authenticated, and a fresh `Lazy! check` finished 66/66 fetches with no timeouts.
 - 2026-11-24: `stylua --check` and `git diff --check` clean on edited Lua files.
 - 2026-11-24: first `config`-based `cmd` override was too late — `plugin/roslyn.lua` starts the client before lazy's `config` runs. Moved the override to `init`; headless fixture then reported 1 Roslyn client with completion capability and no new LSP error.
 
 ## Next step
 
-Report results and remaining follow-ups: intermittent SSH port-22 timeouts (GitHub SSH over 443 is verified working and is the user's decision), Mason registry repair to allow a Roslyn server upgrade, `init.lua` autocmds module never invoked, and `diagnostics.lua` dead `is_active` guard.
+Both tasks are verified complete. Remaining follow-ups, outside this change: Mason registry repair to allow a Roslyn server upgrade, `init.lua` autocmds module never invoked, `diagnostics.lua` dead `is_active` guard, and the native review lifecycle blocked by pre-existing untracked nested Git repositories under `modules/`.
