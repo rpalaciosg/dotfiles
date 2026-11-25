@@ -51,6 +51,10 @@ local opts = {
     lazy = false,
     version = false, -- always use the latest git commit
   },
+  concurrency = 4,
+  git = {
+    timeout = 300,
+  },
   change_detection = {
     enabled = true,
     notify = false, -- silence notify of change
@@ -58,6 +62,7 @@ local opts = {
   checker = {
     enabled = true, -- check for plugin updates periodically
     notify = false, -- notify on update
+    concurrency = 4,
   }, -- automatically check for plugin updates
   performance = {
     cache = {
